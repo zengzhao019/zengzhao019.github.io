@@ -1,1 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zengzhao Li | Research Homepage</title>
+  <meta name="description" content="Academic homepage of Zengzhao Li, theoretical physicist working on non-Hermitian quantum systems, exceptional points, open quantum systems, and quantum information." />
+  <style>
+    :root {
+      --bg: #0a1224;
+      --bg-soft: #0f1930;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.09);
+      --line: rgba(255,255,255,0.10);
+      --text: #eef4ff;
+      --muted: #b7c5e6;
+      --muted-2: #91a4cf;
+      --accent: #83a8ff;
+      --accent-2: #a8d8ff;
+      --accent-3: #5e84ff;
+      --shadow: 0 18px 50px rgba(0,0,0,0.28);
+      --radius: 24px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(131,168,255,0.18), transparent 25%),
+        radial-gradient(circle at 92% 10%, rgba(168,216,255,0.12), transparent 24%),
+        linear-gradient(180deg, #09111f 0%, #0a1224 45%, #0b1327 100%);
+      line-height: 1.72;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10,18,36,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: #fff; text-decoration: none; }
+
+    .hero {
+      padding: 76px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main, .hero-side, .panel {
+      padding: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(131,168,255,0.30);
+      background: rgba(131,168,255,0.09);
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.25rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-main p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 68ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .btn.primary {
+      border: none;
+      color: #09111f;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted-2);
+      font-size: 0.94rem;
+    }
+
+    .profile {
+      width: 130px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .side-block + .side-block { margin-top: 22px; }
+
+    .side-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-2);
+      margin-bottom: 8px;
+    }
+
+    .side-value {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section { padding: 14px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-note {
+      color: var(--muted-2);
+      font-size: 0.96rem;
+      max-width: 50ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-clean li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .list-clean li:last-child { border-bottom: none; }
+
+    .feature-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      height: 100%;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.06rem;
+      letter-spacing: -0.02em;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .pub-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 7px;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .pub-links a {
+      font-size: 0.92rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 20px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.10);
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 20px 20px;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 5px rgba(131,168,255,0.10);
+    }
+
+    .news-item strong { color: #fff; }
+
+    footer {
+      padding: 38px 0 56px;
+      color: var(--muted-2);
+      font-size: 0.96rem;
+    }
+
+    code {
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #fff;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .hero { padding-top: 52px; }
+      .hero-main, .hero-side, .panel { padding: 22px; }
+      .mini-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Zengzhao Li</div>
+      <nav class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow">Theoretical Physics · Quantum Information · Non-Hermitian Dynamics</div>
+          <h1>Zengzhao Li</h1>
+          <p>
+            Associate Researcher at Shenzhen International Quantum Academy, Shenzhen, China. My research develops a unified theoretical framework connecting
+            <strong>non-Hermitian spectral structures</strong>, <strong>open quantum system dynamics</strong>, and
+            <strong>quantum information processing</strong>, with emphasis on
+            <strong>exceptional-point physics</strong> and quantum control mechanisms.
+          </p>
+          <p class="muted" style="margin-top:12px;">
+            I focus on uncovering fundamental mechanisms for enhanced quantum sensing, entanglement generation, and controllable dynamics,
+            bridging theory with emerging quantum technologies such as silicon-based quantum computing and quantum simulation.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#publications">Selected Publications</a>
+            <a class="btn" href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a class="btn" href="mailto:zengzhaoli09@gmail.com">Email</a>
+          </div>
+          </div>
+
+        <aside class="card hero-side">
+          <div class="profile">
+            <img src="photo.jpg" alt="Zengzhao Li" style="width:100%;display:block;border-radius:24px;border:1px solid rgba(255,255,255,0.15);" />
+          </div>
+          <div class="side-block">
+            <div class="side-label">Current Affiliation</div>
+            <div class="side-value">Shenzhen International Quantum Academy</div>
+            <div class="muted">Shenzhen, China · Associate Researcher</div>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Research Focus</div>
+            <div class="chips">
+              <span class="chip">Exceptional Points</span>
+              <span class="chip">Non-Hermitian Quantum Physics</span>
+              <span class="chip">Open Quantum Systems</span>
+              <span class="chip">Quantum Information</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    
+
+    <section id="research">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Research</h2>
+          </div>
+          <div class="section-note">Core themes of my current work.</div>
+        </div>
+        <div class="grid-3">
+          <div class="feature-card">
+            <h3>Exceptional points and non-Hermitian dynamics</h3>
+            <p>Understanding how spectral singularities and non-Hermitian effects generate new mechanisms for quantum dynamics and control.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Open quantum systems and quantum information</h3>
+            <p>Studying dissipative and non-Markovian dynamics with emphasis on sensing, entanglement generation, and information processing.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Floquet engineering, transport, and quantum devices</h3>
+            <p>Exploring driven quantum phases, Majorana-related phenomena, and theoretical routes toward scalable quantum platforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Highlights</h2>
+          </div>
+          <div class="section-note">A few key signals for quick understanding.</div>
+        </div>
+        <div class="grid-3">
+          <div class="feature-card">
+            <h3>Research impact</h3>
+            <p>24 papers as first or corresponding author in leading journals including <em>Physical Review Letters</em>.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Recognition</h3>
+            <p>Proposed multijunction phase-slip flux qubit highlighted in <em>Nature Reviews Materials</em>.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Scientific focus</h3>
+            <p>Key contributions in exceptional-point dynamics, quantum entanglement generation, energy transfer, and Floquet engineering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Selected Publications</h2>
+          </div>
+          <div class="section-note">Representative papers. You can later expand this into a full publication list or separate page.</div>
+        </div>
+        <div class="card panel">
+          <div class="pub-item">
+            <div class="pub-title">Zeng-Zhao Li*, Weijian Chen*, Maryam Abbasi, Kater Murch, and K. Birgitta Whaley, “Speeding up entanglement generation by proximity to higher-order exceptional points,” <em>Physical Review Letters</em> 131, 100202 (2023).</div>
+            <div class="pub-meta">Non-Hermitian quantum dynamics · exceptional points · entanglement generation</div>
+            <div class="pub-links">
+              <a href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Zeng-Zhao Li and K. Birgitta Whaley, “Enhancing vibrationally assisted energy transfer by proximity to exceptional points, probed by fluorescence-detected vibrational spectroscopy,” <em>Physical Review Research</em> 6, 023149 (2024).</div>
+            <div class="pub-meta">Exceptional points · spectroscopy · vibrationally assisted energy transfer</div>
+            <div class="pub-links">
+              <a href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Zeng-Zhao Li, Liwen Ko, Zhibo Yang, Mohan Sarovar, and K. Birgitta Whaley, “Interplay of vibration- and environment-assisted energy transfer,” <em>New Journal of Physics</em> 24, 033032 (2022).</div>
+            <div class="pub-meta">Open quantum systems · energy transfer · environmental effects</div>
+            <div class="pub-links">
+              <a href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Zeng-Zhao Li, Liwen Ko, Zhibo Yang, Mohan Sarovar, and K. Birgitta Whaley, “Unraveling excitation energy transfer assisted by collective behaviors of vibrations,” <em>New Journal of Physics</em> 23, 073012 (2021).</div>
+            <div class="pub-meta">Collective vibrational effects · excitation dynamics · transport mechanisms</div>
+            <div class="pub-links">
+              <a href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Contact</h2>
+          </div>
+        </div>
+        <div class="card panel">
+          <p class="muted">
+            <strong>Email:</strong> <a href="mailto:zengzhaoli09@gmail.com">zengzhaoli09@gmail.com</a><br />
+            <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank">Profile</a><br />
+            <strong>ORCID:</strong> <a href="https://orcid.org/0000-0002-2320-0449" target="_blank">0000-0002-2320-0449</a><br />
+            <strong>CV:</strong> <a href="cv.pdf" target="_blank">Download CV</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Zengzhao Li. Built with GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
