@@ -86,7 +86,7 @@
       display: grid;
       grid-template-columns: 1.35fr 0.85fr;
       gap: 24px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .card {
@@ -185,16 +185,9 @@
     }
 
     .profile {
-      width: 124px;
-      height: 124px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(131,168,255,0.42), rgba(168,216,255,0.18));
-      border: 1px solid rgba(255,255,255,0.14);
-      display: grid;
-      place-items: center;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      width: 130px;
+      border-radius: 24px;
+      overflow: hidden;
     }
 
     .side-block + .side-block { margin-top: 22px; }
@@ -453,13 +446,13 @@
         </div>
 
         <aside class="card hero-side">
-          <img src="photo.jpg" style="width:130px;border-radius:24px;border:1px solid rgba(255,255,255,0.15);">
+          <div class="profile">
+            <img src="photo.jpg" alt="Zengzhao Li" style="width:100%;display:block;border-radius:24px;border:1px solid rgba(255,255,255,0.15);" />
+          </div>
           <div class="side-block">
             <div class="side-label">Current Affiliation</div>
             <div class="side-value">Shenzhen International Quantum Academy</div>
-            <div class="muted">Shenzhen, China · Associate Researcher</div></div></div>
-          </div>
-            <div class="muted"></div>
+            <div class="muted">Shenzhen, China · Associate Researcher</div>
           </div>
           <div class="side-block">
             <div class="side-label">Previous Appointment</div>
