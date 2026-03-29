@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zengzhao Li | Research Homepage</title>
+  <meta name="description" content="Personal academic homepage for research, publications, projects, and contact information." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a31;
+      --panel-2: #182344;
+      --text: #edf2ff;
+      --muted: #b5c2e2;
+      --line: rgba(255,255,255,0.1);
+      --accent: #7aa2ff;
+      --accent-2: #9ad7ff;
+      --max: 1080px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.28);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(122,162,255,0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(154,215,255,0.10), transparent 22%),
+        linear-gradient(180deg, #0b1020 0%, #0d1326 100%);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(11,16,32,0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.96rem;
+    }
+
+    .hero {
+      padding: 84px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(122,162,255,0.32);
+      color: var(--accent-2);
+      background: rgba(122,162,255,0.08);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 65ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      font-weight: 600;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08101f;
+      border: none;
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .profile {
+      width: 116px;
+      height: 116px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(122,162,255,0.42), rgba(154,215,255,0.18));
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .side-meta p {
+      margin: 8px 0;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 18px 0 8px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .panel {
+      padding: 26px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-clean li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .list-clean li:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 18px;
+      list-style: none;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 18px 18px;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 5px rgba(122,162,255,0.08);
+    }
+
+    footer {
+      padding: 34px 0 60px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 54px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-main, .hero-side, .panel {
+        padding: 22px;
+      }
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Zengzhao Li</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow">Research Homepage</div>
+          <h1>Zengzhao Li</h1>
+          <p class="lead">
+            I am a theoretical physicist working at the interface of <strong>quantum physics</strong>,
+            <strong>quantum information</strong>, <strong>open quantum systems</strong>, and
+            <strong>non-Hermitian quantum dynamics</strong>. My research focuses especially on
+            <strong>exceptional points</strong>, quantum control, quantum sensing, and related mechanisms
+            for quantum information processing.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#publications">View Publications</a>
+            <a class="btn" href="./cv.pdf">Download CV</a>
+            <a class="btn" href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div>
+            <div class="profile">ZL</div>
+            <div class="side-meta">
+              <p><strong>Position:</strong> Visiting Researcher</p>
+              <p><strong>Affiliation:</strong> Harbin Institute of Technology, Shenzhen</p>
+              <p><strong>Email:</strong> zengzhaoli09@gmail.com</p>
+              <p><strong>Location:</strong> Shenzhen, China</p>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">Quantum Physics</span>
+            <span class="chip">Exceptional Points</span>
+            <span class="chip">Open Quantum Systems</span>
+            <span class="chip">Quantum Information</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid-2">
+        <div class="card panel">
+          <h2 class="section-title">About</h2>
+          <p class="muted">
+            I am a theoretical researcher in quantum physics with broad interests spanning quantum simulation,
+            quantum information and computation, open quantum systems, non-Hermitian physics, and quantum transport.
+            My recent work has explored exceptional-point-enhanced entanglement generation, vibrationally assisted
+            energy transfer, and theoretical mechanisms connecting spectral structures with quantum dynamical behavior.
+          </p>
+          <p class="muted">
+            Before my current position, I worked as an Assistant Project Scientist at the University of California,
+            Berkeley. I received my PhD in theoretical physics from Fudan University in 2012. Across different
+            projects, I have worked on analytical and numerical problems involving non-equilibrium dynamics,
+            Lindblad evolution, non-Markovian effects, Floquet engineering, Majorana physics, and quantum-device theory.
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h2 class="section-title">Research Interests</h2>
+          <ul class="list-clean">
+            <li><strong>Non-Hermitian quantum physics and exceptional points:</strong> Spectral topology, critical dynamics, and quantum-information-relevant effects near exceptional points.</li>
+            <li><strong>Open quantum systems:</strong> Lindblad dynamics, non-Markovian behavior, decoherence, and environment-assisted quantum processes.</li>
+            <li><strong>Quantum information and control:</strong> Quantum sensing, entanglement generation, quantum state manipulation, and gate-related control mechanisms.</li>
+            <li><strong>Quantum simulation and mesoscopic theory:</strong> Majorana physics, quantum transport, Floquet engineering, and related solid-state quantum systems.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="card panel">
+          <h2 class="section-title">Selected Projects</h2>
+          <ul class="list-clean">
+            <li>
+              <div class="pub-title">Exceptional-point-enhanced quantum dynamics</div>
+              <div class="muted">I study how higher-order and conventional exceptional points reshape quantum evolution, with particular interest in accelerated entanglement generation, enhanced response, and dynamical control mechanisms relevant to quantum technologies.</div>
+            </li>
+            <li>
+              <div class="pub-title">Vibrationally assisted energy transfer and spectroscopy</div>
+              <div class="muted">My work investigates how structured vibrations and environments influence excitation-energy transfer, spectral signatures, and transport efficiency in molecular and aggregate systems.</div>
+            </li>
+            <li>
+              <div class="pub-title">Open-system and mesoscopic quantum theory</div>
+              <div class="muted">I also work on non-equilibrium dynamics, quantum transport, Majorana-related phenomena, and theoretical models that connect condensed-matter platforms with broader questions in quantum information science.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container grid-2">
+        <div class="card panel">
+          <h2 class="section-title">Selected Publications</h2>
+          <ul class="list-clean">
+            <li>
+              <div class="pub-title">Zeng-Zhao Li*, Weijian Chen*, Maryam Abbasi, Kater Murch, and K. Birgitta Whaley. “Speeding up entanglement generation by proximity to higher-order exceptional points.” <em>Physical Review Letters</em> 131, 100202 (2023).</div>
+              <div class="muted">Add DOI / journal link / PDF here</div>
+            </li>
+            <li>
+              <div class="pub-title">Zeng-Zhao Li* and K. Birgitta Whaley*. “Enhancing vibrationally assisted energy transfer by proximity to exceptional points, probed by fluorescence-detected vibrational spectroscopy.” <em>Physical Review Research</em> 6, 023149 (2024).</div>
+              <div class="muted">Add DOI / journal link / PDF here</div>
+            </li>
+            <li>
+              <div class="pub-title">Zeng-Zhao Li, Liwen Ko, Zhibo Yang, Mohan Sarovar, and K. Birgitta Whaley. “Interplay of vibration- and environment-assisted energy transfer.” <em>New Journal of Physics</em> 24, 033032 (2022).</div>
+              <div class="muted">Add DOI / journal link / PDF here</div>
+            </li>
+            <li>
+              <div class="pub-title">Zeng-Zhao Li, Liwen Ko, Zhibo Yang, Mohan Sarovar, and K. Birgitta Whaley. “Unraveling excitation energy transfer assisted by collective behaviors of vibrations.” <em>New Journal of Physics</em> 23, 073012 (2021).</div>
+              <div class="muted">Add DOI / journal link / PDF here</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card panel">
+          <h2 class="section-title">Academic Timeline</h2>
+          <ol class="timeline">
+            <li>
+              <strong>Visiting Researcher</strong><br />
+              <span class="muted">Harbin Institute of Technology, Shenzhen · Current</span>
+            </li>
+            <li>
+              <strong>Assistant Project Scientist</strong><br />
+              <span class="muted">University of California, Berkeley · Previous appointment</span>
+            </li>
+            <li>
+              <strong>PhD in Theoretical Physics</strong><br />
+              <span class="muted">Fudan University · 2012</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container">
+        <div class="card panel">
+          <h2 class="section-title">News</h2>
+          <ul class="list-clean">
+            <li><strong>Recent:</strong> Ongoing work on non-Hermitian quantum systems, exceptional-point dynamics, and quantum-information applications.</li>
+            <li><strong>2024:</strong> Published work on exceptional points and vibrationally assisted energy transfer in <em>Physical Review Research</em>.</li>
+            <li><strong>2023:</strong> Published work on higher-order exceptional points and entanglement generation in <em>Physical Review Letters</em>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container grid-2">
+        <div class="card panel">
+          <h2 class="section-title">Contact</h2>
+          <p class="muted">
+            Email: <a href="mailto:zengzhaoli09@gmail.com">zengzhaoli09@gmail.com</a><br />
+            Google Scholar: <a href="https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar Profile</a><br />
+            ORCID: <a href="https://orcid.org/0000-0002-2320-0449" target="_blank" rel="noreferrer">0000-0002-2320-0449</a><br />
+            GitHub: <a href="https://zengzhao.github.io" target="_blank" rel="noreferrer">zengzhao.github.io</a>
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h2 class="section-title">Tips for Customizing</h2>
+          <ul class="list-clean">
+            <li>Your contact links are already filled in. You can now upload this file directly to GitHub Pages.</li>
+            <li>Upload a <code>cv.pdf</code> file to the repository root so the CV button works immediately.</li>
+            <li>You can add more publications or split them into selected papers and full publication list.</li>
+            <li>Replace the initials box with a professional headshot once you are ready.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Zengzhao Li. Built with GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
