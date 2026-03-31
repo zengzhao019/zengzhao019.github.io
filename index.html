@@ -12,8 +12,29 @@
   --panel-soft: #f0f4ff;
   --text: #0b1b3a;
   --muted: #5a6b8a;
+  --muted-2: #7a8baa;
   --accent: #2f6bff;
+  --accent-2: #2f6bff;
   --line: #e3e8f2;
+  --max: 1120px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.nav-links a {
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+  text-decoration: none;
 }
 
     * { box-sizing: border-box; }
@@ -463,29 +484,41 @@
     
 
     <section id="research">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">Research</h2>
-          </div>
-          <div class="section-note">Core themes of my current work.</div>
-        </div>
-        <div class="grid-3">
-          <div class="feature-card">
-            <h3>Exceptional points and non-Hermitian dynamics</h3>
-            <p>Understanding how spectral singularities and non-Hermitian effects generate new mechanisms for quantum dynamics and control.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Open quantum systems and quantum information</h3>
-            <p>Studying dissipative and non-Markovian dynamics with emphasis on sensing, entanglement generation, and information processing.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Floquet engineering, transport, and quantum devices</h3>
-            <p>Exploring driven quantum phases, Majorana-related phenomena, and theoretical routes toward scalable quantum platforms.</p>
-          </div>
-        </div>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Research</h2>
       </div>
-    </section>
+      <div class="section-note">Core directions of my current work.</div>
+    </div>
+
+    <div class="grid-3">
+      <div class="feature-card">
+        <h3>Exceptional points and non-Hermitian dynamics</h3>
+        <p>
+          Understanding how exceptional points and non-Hermitian spectral structures
+          generate new mechanisms for quantum dynamics, response, and control.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Open quantum systems and quantum information</h3>
+        <p>
+          Studying dissipative and non-Markovian dynamics with emphasis on quantum
+          sensing, entanglement generation, and information processing.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Floquet engineering and quantum devices</h3>
+        <p>
+          Exploring driven quantum phases, Majorana-related phenomena, and theoretical
+          routes toward silicon-based quantum computation and quantum simulation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="highlights">
   <div class="container">
