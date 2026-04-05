@@ -1,6 +1,6 @@
 ---
-layout: home
-title: Zengzhao Li
+layout: default
+title: home
 ---
 <section class="hero">
   <div class="container hero-grid">
