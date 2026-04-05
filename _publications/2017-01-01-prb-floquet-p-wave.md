@@ -2,6 +2,7 @@
 title: "Floquet engineering of long-range p-wave superconductivity: Beyond the high-frequency limit"
 authors: "Zeng-Zhao Li, Chi-Hang Lam, and J. Q. You"
 collection: publications
+featured: true
 venue: "Physical Review B"
 year: 2017
 volume: "96"
