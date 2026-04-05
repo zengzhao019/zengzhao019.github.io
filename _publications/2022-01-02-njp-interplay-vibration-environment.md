@@ -2,7 +2,7 @@
 title: "Interplay of vibration- and environment-assisted energy transfer"
 authors: "Zeng-Zhao Li, Liwen Ko, Zhibo Yang, Mohan Sarovar, and K. Birgitta Whaley"
 venue: "New Journal of Physics"
-year: "2022"
+year: 2022
 volume: "24"
 pages: "033032"
 paperurl: "https://doi.org/10.1088/1367-2630/ac5841"

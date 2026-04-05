@@ -2,7 +2,7 @@
 title: "Tunable self-focusing and self-defocusing effects in a triple quantum dot via the tunnel-enhanced cross-Kerr nonlinearity"
 authors: "Xiao-Qing Luo, Zeng-Zhao Li, Tie-Fu Li, W. Xiong, and J. Q. You"
 venue: "Optics Express"
-year: "2018"
+year: 2018
 volume: "26"
 pages: "32585"
 paperurl: "https://doi.org/10.1364/OE.26.032585"

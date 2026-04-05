@@ -2,7 +2,7 @@
 title: "Collective quantum phase slips in multiple nanowire junctions"
 authors: "Zeng-Zhao Li, Tie-Fu Li, Chi-Hang Lam, and J. Q. You"
 venue: "Physical Review A"
-year: "2019"
+year: 2019
 volume: "99"
 pages: "012309"
 paperurl: "https://doi.org/10.1103/PhysRevA.99.012309"

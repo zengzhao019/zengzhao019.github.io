@@ -2,7 +2,7 @@
 title: "Decoherence of a driven qubit approached via the master equation of Redfield form"
 authors: "Zeng-Zhao Li, Chun-Mei Yao, and Xian-Ting Liang"
 venue: "Modern Physics Letters B"
-year: "2010"
+year: 2010
 volume: "24"
 pages: "619"
 paperurl: "https://doi.org/10.1142/S021798491002269X"

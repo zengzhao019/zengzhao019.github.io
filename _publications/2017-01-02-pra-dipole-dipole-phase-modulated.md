@@ -2,7 +2,7 @@
 title: "Probing weak dipole-dipole interaction using phase-modulated nonlinear spectroscopy"
 authors: "Zeng-Zhao Li, L. Bruder, F. Stienkemeier, and A. Eisfeld"
 venue: "Physical Review A"
-year: "2017"
+year: 2017
 volume: "95"
 pages: "052509"
 paperurl: "https://doi.org/10.1103/PhysRevA.95.052509"
