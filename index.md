@@ -122,8 +122,8 @@ title: home
       <div class="section-note">A short selection on the front page, with the full list on the publications page.</div>
     </div>
     
-<p>Featured matched: {{ featured | size }}</p>
-    <div class="card panel">
+  <p>Featured matched: {{ featured | size }}</p>  
+  <div class="card panel">
   {% assign featured = site.publications | where_exp: "pub", "pub.featured == true or pub.featured == 'true'" | sort: "year" | reverse | slice: 0, 5 %}
   {% for pub in featured %}
   <div class="pub-item">
