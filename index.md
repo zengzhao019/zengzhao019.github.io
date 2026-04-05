@@ -7,7 +7,7 @@ title: home
     <div class="card hero-main">
       <div class="eyebrow">Theoretical Quantum Physics · Quantum Information · Non-Hermitian Dynamics</div>
       <h1>Zengzhao Li</h1>
- 
+  
       <p style="font-size:1.08rem; line-height:1.75; margin-bottom:12px;">
         <strong>Associate Researcher, Shenzhen International Quantum Academy</strong><br>
         PhD in Theoretical Physics, Fudan University · Formerly at UC Berkeley · Max Planck Institute for the Physics of Complex Systems · Lund University
