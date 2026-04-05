@@ -136,7 +136,11 @@ title: home
       </div>
       {% endfor %}
     </div>
-
+<ul>
+{% for pub in site.publications %}
+  <li>{{ pub.title }} — featured: {{ pub.featured }}</li>
+{% endfor %}
+</ul>
     <div class="hero-actions" style="margin-top:18px;">
       <a class="btn primary" href="{{ '/publications/' | relative_url }}">View All Publications</a>
       <a class="btn" href="{{ '/about/' | relative_url }}">Read Full Bio</a>
