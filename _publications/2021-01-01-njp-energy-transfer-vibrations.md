@@ -2,6 +2,7 @@
 title: "Unraveling excitation energy transfer assisted by collective behaviors of vibrations"
 authors: "Zeng-Zhao Li, Liwen Ko, Zhibo Yang, Mohan Sarovar, and K. Birgitta Whaley"
 collection: publications
+featured: true
 venue: "New Journal of Physics"
 year: 2021
 volume: "23"
