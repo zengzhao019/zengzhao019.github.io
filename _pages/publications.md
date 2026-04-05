@@ -4,8 +4,6 @@ title: Publications
 permalink: /publications/
 intro: Representative papers across exceptional-point physics, open quantum dynamics, topological systems, and quantum transport.
 ---
-<p><strong>TEST: FULL PUBLICATIONS PAGE</strong></p>
-<p>Total publications loaded: {{ site.publications | size }}</p>
 
 <div class="panel-shell">
   {% assign pubs = site.publications | sort: 'year' | reverse %}
