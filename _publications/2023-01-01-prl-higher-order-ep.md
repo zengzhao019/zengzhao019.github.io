@@ -2,6 +2,7 @@
 title: "Speeding up entanglement generation by proximity to higher-order exceptional points"
 authors: "Zeng-Zhao Li, Weijian Chen, Maryam Abbasi, Kater Murch, and K. Birgitta Whaley"
 collection: publications
+featured: true
 venue: "Physical Review Letters"
 year: 2023
 volume: "131"
