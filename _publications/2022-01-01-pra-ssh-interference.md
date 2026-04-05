@@ -2,6 +2,7 @@
 title: "Topological quantum interference in a pumped Su-Schrieffer-Heeger lattice"
 authors: "Zeng-Zhao Li, Juan Atalaya, and K. Birgitta Whaley"
 collection: publications
+featured: true
 venue: "Physical Review A"
 year: 2022
 volume: "105"
