@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Publications
 permalink: /publications/
 intro: Representative papers across exceptional-point physics, open quantum dynamics, topological systems, and quantum transport.
