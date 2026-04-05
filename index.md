@@ -121,21 +121,21 @@ title: home
       </div>
       <div class="section-note">A short selection on the front page, with the full list on the publications page.</div>
     </div>
-
+    
+<p>Featured matched: {{ featured | size }}</p>
     <div class="card panel">
-     {% assign featured = site.publications | where_exp: "pub", "pub.featured == true or pub.featured == 'true'" | sort: "year" | reverse | slice: 0, 5 %}
-      <!-- {% assign featured = site.publications | sort: 'year' | reverse | slice: 0, 5 %}-->
-      {% for pub in featured %}
-      <div class="pub-item">
-        <div class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></div>
-        <div class="pub-meta">{{ pub.authors }} · <em>{{ pub.venue }}</em> {% if pub.volume %}{{ pub.volume }},{% endif %} {% if pub.pages %}{{ pub.pages }}{% endif %} ({{ pub.year }})</div>
-        <div class="pub-links">
-          {% if pub.paperurl %}<a href="{{ pub.paperurl }}" target="_blank" rel="noreferrer">DOI</a>{% endif %}
-          {% if pub.arxiv %}<a href="{{ pub.arxiv }}" target="_blank" rel="noreferrer">arXiv</a>{% endif %}
-        </div>
-      </div>
-      {% endfor %}
+  {% assign featured = site.publications | where_exp: "pub", "pub.featured == true or pub.featured == 'true'" | sort: "year" | reverse | slice: 0, 5 %}
+  {% for pub in featured %}
+  <div class="pub-item">
+    <div class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></div>
+    <div class="pub-meta">{{ pub.authors }} · <em>{{ pub.venue }}</em>{% if pub.volume %} {{ pub.volume }}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %} ({{ pub.year }})</div>
+    <div class="pub-links">
+      {% if pub.paperurl %}<a href="{{ pub.paperurl }}" target="_blank" rel="noreferrer">DOI</a>{% endif %}
+      {% if pub.arxiv %}<a href="{{ pub.arxiv }}" target="_blank" rel="noreferrer">arXiv</a>{% endif %}
     </div>
+  </div>
+  {% endfor %}
+</div>
 
     <div class="hero-actions" style="margin-top:18px;">
       <a class="btn primary" href="{{ '/publications/' | relative_url }}">View All Publications</a>
