@@ -123,7 +123,8 @@ title: home
     </div>
 
     <div class="card panel">
-      {% assign featured = site.publications | sort: 'year' | reverse | slice: 0, 5 %}
+      {% assign featured = site.publications | where: "featured", true | reverse | slice: 0, 5 %}
+      <!-- {% assign featured = site.publications | sort: 'year' | reverse | slice: 0, 5 %}-->
       {% for pub in featured %}
       <div class="pub-item">
         <div class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></div>
