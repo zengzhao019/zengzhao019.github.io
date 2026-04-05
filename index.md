@@ -123,7 +123,7 @@ title: home
     </div>
 
     <div class="card panel">
-      {% assign featured = site.publications | where_exp: "pub", "pub.featured == true" | sort: "year" | reverse | slice: 0, 5 %}
+     {% assign featured = site.publications | where_exp: "pub", "pub.featured == true or pub.featured == 'true'" | sort: "year" | reverse | slice: 0, 5 %}
       <!-- {% assign featured = site.publications | sort: 'year' | reverse | slice: 0, 5 %}-->
       {% for pub in featured %}
       <div class="pub-item">
@@ -136,11 +136,7 @@ title: home
       </div>
       {% endfor %}
     </div>
-<ul>
-{% for pub in site.publications %}
-  <li>{{ pub.title }} — featured: {{ pub.featured }}</li>
-{% endfor %}
-</ul>
+
     <div class="hero-actions" style="margin-top:18px;">
       <a class="btn primary" href="{{ '/publications/' | relative_url }}">View All Publications</a>
       <a class="btn" href="{{ '/about/' | relative_url }}">Read Full Bio</a>
