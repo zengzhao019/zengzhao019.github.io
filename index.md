@@ -123,20 +123,25 @@ title: home
     </div>
 
      <div class="card panel">
-      {% for pub in pubs %}
-      {% if pub.featured == true or pub.featured == "true" %}
-      {% assign featured_count = featured_count | plus: 1 %}
-      {% if featured_count <= 5 %}
+  {% assign pubs = site.publications | sort: 'year' | reverse %}
+  {% assign shown = 0 %}
+
+  {% for pub in pubs %}
+    {% if pub.featured %}
+      {% assign shown = shown | plus: 1 %}
+      {% if shown <= 5 %}
       <div class="pub-item">
         <div class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></div>
-        <div class="pub-meta">{{ pub.authors }} · <em>{{ pub.venue }}</em> {% if pub.volume %}{{ pub.volume }},{% endif %} {% if pub.pages %}{{ pub.pages }}{% endif %} ({{ pub.year }})</div>
+        <div class="pub-meta">{{ pub.authors }} · <em>{{ pub.venue }}</em>{% if pub.volume %} {{ pub.volume }}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %} ({{ pub.year }})</div>
         <div class="pub-links">
           {% if pub.paperurl %}<a href="{{ pub.paperurl }}" target="_blank" rel="noreferrer">DOI</a>{% endif %}
           {% if pub.arxiv %}<a href="{{ pub.arxiv }}" target="_blank" rel="noreferrer">arXiv</a>{% endif %}
         </div>
       </div>
-      {% endfor %}
-    </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
   
 
     <div class="hero-actions" style="margin-top:18px;">
