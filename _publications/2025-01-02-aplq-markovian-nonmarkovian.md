@@ -3,7 +3,7 @@ title: "Spectral signatures of the Markovian to non-Markovian transition in open
 authors: "Zeng-Zhao Li, Chi-Hang Lam, Cho-Tung Yip, and Bo Li"
 collection: publications
 venue: "APL Quantum"
-year: "2025"
+year: 2025
 volume: "2"
 pages: "026105"
 paperurl: "https://doi.org/10.1063/5.0262783"
