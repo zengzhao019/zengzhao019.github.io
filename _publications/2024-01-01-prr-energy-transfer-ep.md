@@ -2,6 +2,7 @@
 title: "Enhancing vibrationally assisted energy transfer by proximity to exceptional points, probed by fluorescence-detected vibrational spectroscopy"
 authors: "Zeng-Zhao Li and K. Birgitta Whaley"
 collection: publications
+featured: true
 venue: "Physical Review Research"
 year: 2024
 volume: "6"
