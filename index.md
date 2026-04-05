@@ -123,8 +123,10 @@ title: home
     </div>
 
      <div class="card panel">
-      {% assign featured = site.publications | where_exp: "pub", "pub.featured == true or pub.featured == 'true'" | sort: "year" | reverse | slice: 0, 5 %}
-      {% for pub in featured %}
+      {% for pub in pubs %}
+      {% if pub.featured == true or pub.featured == "true" %}
+      {% assign featured_count = featured_count | plus: 1 %}
+      {% if featured_count <= 5 %}
       <div class="pub-item">
         <div class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></div>
         <div class="pub-meta">{{ pub.authors }} · <em>{{ pub.venue }}</em> {% if pub.volume %}{{ pub.volume }},{% endif %} {% if pub.pages %}{{ pub.pages }}{% endif %} ({{ pub.year }})</div>
