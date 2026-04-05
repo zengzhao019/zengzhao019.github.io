@@ -1,0 +1,70 @@
+title: "Zengzhao Li"
+name: "Zengzhao Li"
+description: "Academic homepage of Zengzhao Li, theoretical physicist working on non-Hermitian quantum systems, exceptional points, open quantum systems, and quantum information."
+url: "https://zengzhao019.github.io"
+baseurl: ""
+repository: "zengzhao019/zengzhao019.github.io"
+locale: "en-US"
+timezone: "Asia/Shanghai"
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
+
+include:
+  - _pages
+  - files
+  - images
+
+exclude:
+  - README.md
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+collections:
+  publications:
+    output: true
+    permalink: /publication/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+
+navigation:
+  - title: "Research"
+    url: "/research/"
+  - title: "Highlights"
+    url: "/highlights/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+
+social:
+  scholar: "https://scholar.google.com/citations?user=fXFQttEAAAAJ&hl=en"
+  orcid: "https://orcid.org/0000-0002-2320-0449"
+  email: "zengzhaoli09@gmail.com"
+  github: "https://github.com/zengzhao019"
+
+author:
+  name: "Zengzhao Li"
+  avatar: "/images/photo.jpg"
+  bio: "Associate Researcher, Shenzhen International Quantum Academy"
+  location: "Shenzhen, China"
+  employer: "Shenzhen International Quantum Academy"
