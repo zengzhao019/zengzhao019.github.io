@@ -4,29 +4,29 @@ title: home
 ---
 <section class="hero">
   <div class="container hero-grid">
+    
     <div class="card hero-main">
       <div class="eyebrow">Theoretical Quantum Physics · Quantum Information · Non-Hermitian Dynamics</div>
-      <h1>Zengzhao Li</h1>
+        <h1>Zengzhao Li</h1>
 
       <p style="font-size:1.08rem; line-height:1.75; margin-bottom:12px;">
-      <strong>Associate Researcher, Shenzhen International Quantum Academy</strong>
+        <strong>Researcher, Shenzhen International Quantum Academy</strong>
       </p>
 
       <p class="muted" style="margin-top:10px;">
-      I am a theoretical physicist working at the interface of <strong>non-Hermitian quantum physics</strong>,
-      <strong>open quantum systems</strong>, and <strong>quantum information science</strong>.
-      My research focuses on exceptional-point dynamics, dissipative quantum phenomena,
-      quantum control, and quantum transport, with broader connections to scalable quantum technologies.
+        I am a theoretical physicist working at the interface of <strong>non-Hermitian quantum physics</strong>,
+        <strong>open quantum systems</strong>, and <strong>quantum information science</strong>.
+        My research focuses on exceptional-point dynamics, dissipative quantum phenomena,
+        quantum control, and quantum transport, with broader connections to scalable quantum technologies.
       </p>
 
-    <p class="muted" style="margin-top:10px;">
-      I received my PhD in Theoretical Physics from <strong>Fudan University</strong> and have conducted research at
-    <strong>UC Berkeley</strong>, the <strong>Max Planck Institute for the Physics of Complex Systems</strong>,
-    and <strong>Lund University</strong>.
-    </p>
+      <p class="muted" style="margin-top:10px;">
+        I received my PhD in Theoretical Physics from <strong>Fudan University</strong> and have conducted research at
+        <strong>UC Berkeley</strong>, the <strong>Max Planck Institute for the Physics of Complex Systems</strong>,
+        and <strong>Lund University</strong>.
+      </p>
   
       
-
       <div class="hero-actions">
         <a class="btn primary" href="{{ '/publications/' | relative_url }}">Selected Publications</a>
         <a class="btn" href="{{ '/files/cv.pdf' | relative_url }}" target="_blank" rel="noreferrer">Download CV</a>
