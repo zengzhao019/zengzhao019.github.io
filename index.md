@@ -40,18 +40,18 @@ title: home
       </div>
 
       <div class="side-block">
-        <div class="side-label">Current Affiliation</div>
+        <div class="side-label">Affiliation</div>
         <div class="side-value">Shenzhen International Quantum Academy</div>
-        <div class="muted">Shenzhen, China · Associate Researcher</div>
+        <div class="muted">Shenzhen, China</div>
       </div>
 
       <div class="side-block">
-        <div class="side-label">Background</div>
-        <div class="muted">Fudan University · UC Berkeley · Max Planck · Lund University</div>
+        <div class="side-label">Education & Research Experience</div>
+        <div class="muted">Fudan University · UC Berkeley · Max Planck Institute · Lund University</div>
       </div>
 
       <div class="side-block">
-        <div class="side-label">Research Focus</div>
+        <div class="side-label">Research Areas</div>
         <div class="chips">
           <span class="chip">Exceptional Points</span>
           <span class="chip">Non-Hermitian Physics</span>
