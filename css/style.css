@@ -4,6 +4,7 @@
 .hero{display:block;padding-block:90px}.hero-copy{max-width:820px}.hero .lede{max-width:760px}.hero-secondary{max-width:730px;margin:22px 0 0;color:var(--muted);font-size:1rem;line-height:1.75}.hero .affiliation{margin-top:30px}
 .publication-note{margin:7px 0 0;color:var(--muted);font-family:var(--serif);font-size:.78rem}
 .year-group .publication h3{position:relative}.publication-number{position:absolute;right:calc(100% + .55rem);color:var(--muted);font-family:var(--sans);font-size:.75em;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.publications-page .page-header{margin-bottom:68px}.publications-page .page-header h1{margin-bottom:0}
 @media(max-width:700px){.hero{display:block;padding-block:62px 58px}.hero .affiliation{margin-top:26px}}
-@media(max-width:700px){.year-group .publication{margin-left:1.75rem}.publication-number{right:calc(100% + .35rem)}}
+@media(max-width:700px){.publications-page .page-header{margin-bottom:48px}.year-group .publication{margin-left:1.75rem}.publication-number{right:calc(100% + .35rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

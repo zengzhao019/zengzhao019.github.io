@@ -76,22 +76,11 @@ def replace_block(path, name, markup):
     path.write_text(updated, encoding="utf-8")
 
 
-def replace_summary(path, publications):
-    text = path.read_text(encoding="utf-8")
-    summary = f'{len(publications)} publications · {min(pub["year"] for pub in publications)}–{max(pub["year"] for pub in publications)}'
-    pattern = r"(?P<start><!-- PUBLICATIONS:SUMMARY:START -->).*?(?P<end><!-- PUBLICATIONS:SUMMARY:END -->)"
-    updated, count = re.subn(pattern, rf"\g<start>{summary}\g<end>", text)
-    if count != 1:
-        raise RuntimeError(f"Expected one publication summary block in {path}")
-    path.write_text(updated, encoding="utf-8")
-
-
 def main():
     publications = json.loads(DATA.read_text(encoding="utf-8"))
     publications.sort(key=lambda pub: (-pub["year"], pub["title"].casefold()))
     replace_block(ROOT / "index.html", "SELECTED", selected_markup(publications))
     replace_block(ROOT / "publications.html", "ALL", all_markup(publications))
-    replace_summary(ROOT / "publications.html", publications)
     print(f"Generated {sum(bool(p.get('selected')) for p in publications)} selected and {len(publications)} total publications.")
 
 
