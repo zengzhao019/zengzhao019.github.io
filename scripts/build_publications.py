@@ -26,8 +26,17 @@ def entry(pub, indent, number=None):
     title_url = pub.get("journal_url") or pub.get("doi") or pub.get("arxiv") or pub.get("pdf")
     title = html.escape(pub["title"])
     title_html = f'<a href="{html.escape(title_url, quote=True)}">{title}</a>' if title_url else title
-    bits = [str(pub.get(key, "")) for key in ("journal", "volume", "pages") if pub.get(key)]
-    venue = f'{html.escape(", ".join(bits))} ({pub["year"]})'
+    journal = str(pub.get("journal", ""))
+    volume = str(pub.get("volume", ""))
+    pages = str(pub.get("pages", ""))
+    citation = journal
+    if volume:
+        citation += f" {volume}"
+        if pages:
+            citation += f", {pages}"
+    elif pages:
+        citation += f", {pages}"
+    venue = f'{html.escape(citation)} ({pub["year"]})'
     links = []
     for label, key in (("DOI", "doi"), ("Journal", "journal_url"), ("arXiv", "arxiv"), ("PDF", "pdf")):
         if pub.get(key):
