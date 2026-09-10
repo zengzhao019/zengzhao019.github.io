@@ -36,7 +36,7 @@ story = []
 header = Table([[Paragraph("Zeng-Zhao Li", name), Paragraph("zengzhaoli09@gmail.com<br/>zengzhaoli.github.io", small_right)]], colWidths=[105*mm, 61*mm])
 header.setStyle(TableStyle([("VALIGN", (0,0), (-1,-1), "TOP"), ("LEFTPADDING", (0,0), (-1,-1), 0), ("RIGHTPADDING", (0,0), (-1,-1), 0), ("TOPPADDING", (0,0), (-1,-1), 0), ("BOTTOMPADDING", (0,0), (-1,-1), 0)]))
 story += [header, Spacer(1, 8), Paragraph("RESEARCHER IN QUANTUM SCIENCE", subtitle)]
-story += [Paragraph("Current Appointment", section), Paragraph("Shenzhen International Quantum Academy<br/>Silicon Quantum Computing Laboratory", body)]
+story += [Paragraph("Current Appointment", section), Paragraph("International Quantum Academy, Shenzhen<br/>Silicon Quantum Computing Laboratory", body)]
 story += [Paragraph("Research Profile", section), Paragraph("Theoretical research in quantum information and computation, non-Hermitian quantum physics, exceptional points, open quantum systems, quantum transport, quantum control, spin qubits, and silicon quantum computing.", body)]
 story += [Paragraph("Selected Publications", section)]
 publications = [
