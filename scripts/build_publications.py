@@ -30,6 +30,9 @@ def entry(pub, indent, number=None):
     volume = str(pub.get("volume", ""))
     pages = str(pub.get("pages", ""))
     citation = journal
+    if not citation and pub.get("arxiv"):
+        arxiv_id = pub["arxiv"].rstrip("/").rsplit("/", 1)[-1]
+        citation = f"arXiv:{arxiv_id}"
     if volume:
         citation += f" {volume}"
         if pages:
@@ -87,7 +90,13 @@ def replace_block(path, name, markup):
 
 def main():
     publications = json.loads(DATA.read_text(encoding="utf-8"))
-    publications.sort(key=lambda pub: (-pub["year"], pub["title"].casefold()))
+    publications.sort(
+        key=lambda pub: (
+            -pub["year"],
+            0 if not pub.get("journal") and pub.get("arxiv") else 1,
+            pub["title"].casefold(),
+        )
+    )
     replace_block(ROOT / "index.html", "SELECTED", selected_markup(publications))
     replace_block(ROOT / "publications.html", "ALL", all_markup(publications))
     print(f"Generated {sum(bool(p.get('selected')) for p in publications)} selected and {len(publications)} total publications.")
